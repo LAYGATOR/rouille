@@ -1,6 +1,7 @@
 # sada(صدأ)
 
-![نبغا احد يسويلنا رسمة]()
+![](logo-transparent.jpg)
+![](logo.jpg)
 
 Aren't you _متعب_ from writing Rust programs in English? Would you like to try something different, in an exotic and funny way? Would you want to bring some Arabic
 touch to your programs?
