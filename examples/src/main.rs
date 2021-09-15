@@ -1,85 +1,86 @@
-rouille::rouille! {
-    externe cagette rouille;
+#![allow(non_snake_case)]
+#![allow(non_upper_case_globals)]
 
-    utilisons std::collections::Dictionnaire comme Dico;
+sada::sada! {
+    خارِجي صندوق sada;
 
-    convention CléValeur {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine);
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine>;
+    استخدم std::collections::قاموس ك قاموسي;
+
+    سمه مفتاح_القيمة {
+        دالة اكتب(&ذات, مفتاح: نص, قيمة: نص);
+        دالة اقرأ(&ذات, مفتاح: نص) -> نتيجة<خيار<&نص>, نص>;
     }
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaine, Chaine>> = Rien;
+    لا_حركة متغير قاموس: خيار<قاموسي<نص, نص>> = لا_شيء;
 
-    structure Concrète;
+    بنية محددة;
 
-    réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine) {
-            soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
+    تنفيذ مفتاح_القيمة ل محددة {
+        دالة اكتب(&ذات, مفتاح: نص, قيمة: نص) {
+            دع قاموسي = غير_امن {
+                قاموس.خذ_او_ادخل_ب(افتراضي::طبيعي)
             };
-            dico.insérer(clé, valeur);
+            قاموسي.ادخل(مفتاح, قيمة);
         }
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
+
+        دالة اقرأ(&ذات, مفتاح: نص) -> نتيجة<خيار<&نص>, نص> {
+            اذا دع بعض(قاموسي) = غير_امن { قاموس.ك_مرجِع() } {
+                حسنا(قاموسي.جلب(&مفتاح))
+            } آخر {
+                خطأ("لا يمكن جلب القاموس".إلى())
             }
         }
     }
 
-    public(cagette) fonction peut_etre(i: u32) -> PeutÊtre<Résultat<u32, Chaine>> {
-        si i % 2 == 1 {
-            si i == 42 {
-                Quelque(Arf(Chaine::depuis("merde")))
-            } sinon {
-                Quelque(Bien(33))
+    عام(صندوق) دالة يمكن_أن_يكون(د: u32) -> خيار<نتيجة<u32, نص>> {
+        اذا د % 2 == 1 {
+            اذا د == 42 {
+                بعض(خطأ(نص::من("هلع")))
+            } آخر {
+                بعض(حسنا(33))
             }
-        } sinon {
-            Rien
+        } آخر {
+            لا_شيء
         }
     }
 
-    asynchrone fonction exemple() {
+    غير_متزامنة دالة مثال() {
     }
 
-    asynchrone fonction exemple2() {
-        exemple().attend;
+    غير_متزامنة دالة مثال2() {
+        مثال().انتظر;
     }
 
-    fonction principale() {
-        soit mutable x = 31;
+    دالة رئيسي() {
+        دع متغير ص = 31;
 
-        selon x {
+        طابق ص {
             42 => {
-                affiche!("omelette du fromage")
+                اطبع!("مدري")
             }
-            _ => affiche!("voila")
+            _ => اطبع!("والله صعبة يا شباب")
         }
 
-        pour i de 0..10 {
-            soit val = boucle {
-                arrête i;
+        ل د في 0..10 {
+            دع الفار = حلقه {
+                كسر د;
             };
 
-            tant que x < val {
-                x += 1;
+            بينما ماذا ص < الفار {
+                ص += 1;
             }
 
-            x = si soit Quelque(resultat) = peut_etre(i) {
-                resultat.déballer()
-            } sinon {
+            ص = اذا دع بعض(نتيجة) = يمكن_أن_يكون(ص) {
+                نتيجة.فك()
+            } آخر {
                 12
             };
         }
 
-        //secondaire();
     }
 
-    #[légal(code_inaccessible)]
-    fonction secondaire() {
-        merde!("oh non"); // for the true French experience
-        calisse!("tabernacle"); // for friends speaking fr-ca
-        oups!("fetchez la vache"); // in SFW contexts
+    #[اسمح(كود_بعيد_المنال)]
+    دالة ثانوية() {
+        هلع!("نجرب");
     }
 }
