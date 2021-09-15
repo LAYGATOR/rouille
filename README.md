@@ -61,6 +61,19 @@ syntax.
 
 ليش لا؟
 
+## :لغات اخرى
+
+- French(الأصل): [rouille](https://github.com/bnjbvr/rouille)
+- Dutch: [roest](https://github.com/jeroenhd/roest)
+- German: [rost](https://github.com/michidk/rost)
+- Polish: [rdza](https://github.com/phaux/rdza)
+- Italian: [ruggine](https://github.com/DamianX/ruggine)
+- Russian: [ржавчина](https://github.com/FluxIndustries/rzhavchina)
+- Esperanto: [rustteksto](https://github.com/dscottboggs/rustteksto)
+- Hindi: [zung](https://github.com/rishit-khandelwal/zung)
+- Hungarian: [rozsda](https://github.com/jozsefsallai/rozsda)
+- Chinese: [xiu (锈)](https://github.com/lucifer1004/xiu)
+- Finnish: [ruoste](https://github.com/vkoskiv/ruoste)
 
 ## :شروط الترخيص
 
